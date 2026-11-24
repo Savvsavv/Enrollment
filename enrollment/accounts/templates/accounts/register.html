@@ -1,0 +1,10 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+<h1 class="title title-wide">CREATE AN ACCOUNT</h1>
+<form method="POST" class="form" novalidate>
+  {% csrf_token %}
+  {% include "accounts/fields.html" %}
+  <button type="submit">Create Account</button>
+</form>
+<p class="switch">Already have an account?<br><a href="{% url 'login_user' %}">Log in</a></p>
+{% endblock %}
